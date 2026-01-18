@@ -370,13 +370,23 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col gap-3">
+              {savedInvoiceId && (
+                <a
+                  href={`https://www.notion.so/${savedInvoiceId.replace(/-/g, "")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                >
+                  View Invoice in Notion
+                </a>
+              )}
               <a
                 href={NOTION_DB_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-6 py-3 bg-gray-900 text-white rounded-lg font-medium hover:bg-gray-800 transition-colors"
+                className="inline-block px-6 py-3 border border-gray-300 text-gray-700 rounded-lg font-medium hover:bg-gray-50 transition-colors"
               >
-                View in Notion Database
+                View All Invoices
               </a>
               <button
                 onClick={reset}
@@ -392,7 +402,7 @@ export default function Home() {
         <div className="mt-8 text-center text-sm text-gray-500">
           Powered by{" "}
           <a href="https://wwithai.com" className="text-blue-600 hover:underline">
-            WWITHai
+            <span className="font-semibold">W</span>with<span className="font-semibold">AI</span>
           </a>
         </div>
       </div>
